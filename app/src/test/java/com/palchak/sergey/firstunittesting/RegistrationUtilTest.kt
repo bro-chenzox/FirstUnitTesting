@@ -16,7 +16,7 @@ class RegistrationUtilTest {
     }
 
     @Test
-    fun `valid userName and correctly repeats password returns true`() {
+    fun `valid userName and correctly repeated password returns true`() {
         val result = RegistrationUtil.validateRegistrationInput(
             "Sergey",
             "123",

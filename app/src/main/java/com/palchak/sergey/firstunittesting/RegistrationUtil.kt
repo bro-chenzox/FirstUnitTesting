@@ -20,6 +20,12 @@ object RegistrationUtil {
         password: String,
         confirmedPassword: String
     ): Boolean {
-        return true
+        return when {
+            userName.isEmpty() || password.isEmpty() -> false
+            userName in existingUsers -> false
+            password != confirmedPassword -> false
+            password.count { it.isDigit() } < 2 -> false
+            else -> true
+        }
     }
 }
